@@ -1,18 +1,115 @@
 function Controller() {
     function clickFrente() {
-        var camera = Alloy.createController("camera");
-        camera.getView().open({
-            modal: true
-        }, 1);
+        var escolha = [ "Camera", "Galery" ];
+        var dialog = Ti.UI.createOptionDialog({
+            options: escolha,
+            title: "Escolha a Fonte"
+        });
+        dialog.addEventListener("click", function() {
+            switch (dialog.selectedIndex) {
+              case 0:
+                Titanium.Media.showCamera({
+                    success: function(event) {
+                        var image = event.media;
+                        $.ImgFrente.image = image;
+                        if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+                            var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, contato.get("alloy_id") + "_1.jpg");
+                            file.write(image);
+                            contato.set({
+                                foto1: file.nativePath
+                            });
+                        }
+                    },
+                    cancel: function() {},
+                    error: function(error) {
+                        var a = Titanium.UI.createAlertDialog({
+                            title: "Camera"
+                        });
+                        error.code == Titanium.Media.NO_CAMERA ? a.setMessage("Device does not have camera") : a.setMessage("Unexpected error: " + error.code);
+                        a.show();
+                    },
+                    allowImageEditing: true,
+                    saveToPhotoGallery: true
+                });
+                break;
+
+              case 1:
+                Titanium.Media.openPhotoGallery({
+                    success: function(event) {
+                        var image = event.media;
+                        $.ImgFrente.image = image;
+                        if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+                            var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, contato.get("alloy_id") + "_1.jpg");
+                            file.write(image);
+                            contato.set({
+                                foto1: file.nativePath
+                            });
+                        }
+                    },
+                    cancel: function() {}
+                });
+            }
+        });
+        dialog.show();
     }
     function clickVerso() {
-        var camera = Alloy.createController("camera");
-        camera.getView().open({
-            modal: true
-        }, 2);
+        var escolha = [ "Camera", "Galery" ];
+        var dialog = Ti.UI.createOptionDialog({
+            options: escolha,
+            title: "Escolha a Fonte"
+        });
+        dialog.addEventListener("click", function() {
+            switch (dialog.selectedIndex) {
+              case 0:
+                Titanium.Media.showCamera({
+                    success: function(event) {
+                        var image = event.media;
+                        $.ImgVerso.image = image;
+                        if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+                            var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, contato.get("alloy_id") + "_2.jpg");
+                            file.write(image);
+                            contato.set({
+                                foto2: file.nativePath
+                            });
+                        }
+                    },
+                    cancel: function() {},
+                    error: function(error) {
+                        var a = Titanium.UI.createAlertDialog({
+                            title: "Camera"
+                        });
+                        error.code == Titanium.Media.NO_CAMERA ? a.setMessage("Device does not have camera") : a.setMessage("Unexpected error: " + error.code);
+                        a.show();
+                    },
+                    allowImageEditing: true,
+                    saveToPhotoGallery: true
+                });
+                break;
+
+              case 1:
+                Titanium.Media.openPhotoGallery({
+                    success: function(event) {
+                        var image = event.media;
+                        $.ImgVerso.image = image;
+                        if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+                            var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, contato.get("alloy_id") + "_2.jpg");
+                            file.write(image);
+                            contato.set({
+                                foto2: file.nativePath
+                            });
+                        }
+                    },
+                    cancel: function() {}
+                });
+            }
+        });
+        dialog.show();
     }
     function clickSalvar() {
-        alert(contato.foto1);
+        contato.set({
+            nome: $.txfNome.value
+        });
+        contato.save();
         close();
     }
     function close() {
@@ -77,7 +174,7 @@ function Controller() {
     $.__views.winImagens.add($.__views.txfNome);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    Ti.App.novo = Alloy.createModel("contato", {
+    var contato = Alloy.createModel("contato", {
         nome: $.txfNome.value,
         foto1: "",
         foto2: "",
