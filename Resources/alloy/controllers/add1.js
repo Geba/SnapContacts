@@ -1,9 +1,22 @@
 function Controller() {
-    function click() {
+    function clickFrente() {
         var camera = Alloy.createController("camera");
         camera.getView().open({
             modal: true
         });
+    }
+    function clickVerso() {
+        var camera = Alloy.createController("camera");
+        camera.getView().open({
+            modal: true
+        }, imagemVerso);
+    }
+    function clickSalvar() {
+        alert(contato.foto1);
+        close();
+    }
+    function close() {
+        $.winImagens.close();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "add1";
@@ -28,7 +41,7 @@ function Controller() {
         id: "frenteButton"
     });
     $.__views.winImagens.add($.__views.frenteButton);
-    click ? $.__views.frenteButton.addEventListener("click", click) : __defers["$.__views.frenteButton!click!click"] = true;
+    clickFrente ? $.__views.frenteButton.addEventListener("click", clickFrente) : __defers["$.__views.frenteButton!click!clickFrente"] = true;
     $.__views.ImgFrente = Ti.UI.createImageView({
         id: "ImgFrente"
     });
@@ -41,6 +54,7 @@ function Controller() {
         id: "versoButton"
     });
     $.__views.winImagens.add($.__views.versoButton);
+    clickVerso ? $.__views.versoButton.addEventListener("click", clickVerso) : __defers["$.__views.versoButton!click!clickVerso"] = true;
     $.__views.ImgVerso = Ti.UI.createImageView({
         id: "ImgVerso"
     });
@@ -53,6 +67,7 @@ function Controller() {
         id: "salvarButton"
     });
     $.__views.winImagens.add($.__views.salvarButton);
+    clickSalvar ? $.__views.salvarButton.addEventListener("click", clickSalvar) : __defers["$.__views.salvarButton!click!clickSalvar"] = true;
     $.__views.txfNome = Ti.UI.createTextField({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
@@ -62,15 +77,19 @@ function Controller() {
     $.__views.winImagens.add($.__views.txfNome);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    Alloy.createModel("contato", {
+    var imagemFrente = "";
+    var imagemVerso = "";
+    var contato = Alloy.createModel("contato", {
         nome: $.txfNome.value,
-        foto1: "",
-        foto2: "",
+        foto1: imagemFrente,
+        foto2: imagemVerso,
         qtdFotos: 0,
         favoritos: 0,
         categorias: ""
     });
-    __defers["$.__views.frenteButton!click!click"] && $.__views.frenteButton.addEventListener("click", click);
+    __defers["$.__views.frenteButton!click!clickFrente"] && $.__views.frenteButton.addEventListener("click", clickFrente);
+    __defers["$.__views.versoButton!click!clickVerso"] && $.__views.versoButton.addEventListener("click", clickVerso);
+    __defers["$.__views.salvarButton!click!clickSalvar"] && $.__views.salvarButton.addEventListener("click", clickSalvar);
     _.extend($, exports);
 }
 

@@ -1,10 +1,10 @@
 <Alloy>
 	<Window id="winImagens" titleid="adicionarImagens" layout="vertical">
-			<Button titleid="frente" id="frenteButton" onClick="click" ></Button>
+			<Button titleid="frente" id="frenteButton" onClick="clickFrente" ></Button>
 			<ImageView id="ImgFrente">
-			<Button titleid="verso" id="versoButton"></Button>
+			<Button titleid="verso" id="versoButton" onClick="clickVerso"></Button>
 			<ImageView id="ImgVerso">			
-			<Button title="Salvar" id="salvarButton"></Button>
+			<Button title="Salvar" id="salvarButton" onClick="clickSalvar"></Button>
 			<TextField id="txfNome" hintText="Palavra Chave"></TextField>
 		</Window>
 </Alloy>

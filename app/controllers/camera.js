@@ -1,3 +1,4 @@
+
 //add event listener
 $.cameraButton.addEventListener('click', function(e) {
 	Titanium.Media.showCamera({
