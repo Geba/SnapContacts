@@ -1,0 +1,7 @@
+<Alloy>
+	<Tab id="configTab" titleid="configuracoes">
+		<Window id="win4" title="configuracoes">
+			<Label id="label2" color="#999">I am Window 4</Label>
+		</Window>
+	</Tab>
+</Alloy>

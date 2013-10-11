@@ -1,0 +1,6 @@
+<Alloy>
+	<Window id="winCamera" titleid="Camera" layout="vertical">
+		<Button title="Camera" id="cameraButton"></Button>
+		<Button title="Galeria" id="galeriaButton"></Button>
+		</Window>
+</Alloy>

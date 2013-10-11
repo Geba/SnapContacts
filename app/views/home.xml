@@ -1,0 +1,11 @@
+<Alloy>
+	<Tab id="homeTab" titleid="home" class="tab">
+		<Window id="homeWindow" titleid="home" layout="vertical">
+			<Button id="Btadd" onClick="openAdd1"></Button>
+			<View layout="horizontal">
+				<Label id="Lprocurar"></Label>
+				<TextField id="TFprocurar"></TextField>
+			</View>
+		</Window>
+	</Tab>
+</Alloy>

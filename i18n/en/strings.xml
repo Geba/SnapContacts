@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="camera">Camera</string>
+	<string name="home">Home</string>
+	<string name="configuracoes">Configurações</string>
+	<string name="favoritos">Favoritos</string>
+	<string name="procurarDica">Digite o nome de alguém</string>
+	<string name="procurarText">Procurar</string>
+	<string name="adicionarImagens">Adicionar</string>
+	<string name="verso">Verso</string>
+	<string name="frente">Frente</string>
+	<string name="adicionar">Adicionar</string>
+</resources>

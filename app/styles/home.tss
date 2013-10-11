@@ -1,0 +1,15 @@
+"Tab":{
+	icon:'/images/ic_home.png',
+}
+
+"#TFprocurar":{
+	hintText:L('procurarDica')
+}
+"#Lprocurar":{
+	textid:"procurarText",
+}
+"#Btadd":{
+	title:L("adicionar"),
+}
+
+

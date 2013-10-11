@@ -1,0 +1,7 @@
+<Alloy>
+	<Tab id="favoriteTab" titleid="favoritos">
+		<Window id="win3" titleid="favoritos">
+			<Label id="label2" color="#999">I am Window 3</Label>
+		</Window>
+	</Tab>
+</Alloy>
