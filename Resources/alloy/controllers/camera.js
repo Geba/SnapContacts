@@ -34,11 +34,21 @@ function Controller() {
     $.__views.winCamera.add($.__views.galeriaButton);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var escolha = arguments[0];
     $.cameraButton.addEventListener("click", function() {
         Titanium.Media.showCamera({
             success: function(event) {
                 var image = event.media;
                 event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO && Ti.App.Properties.setString("image", image.nativePath);
+                switch (escolha) {
+                  case 1:
+                    Ti.App.novo.foto1 = image;
+                    break;
+
+                  case 2:
+                    Ti.App.novo.foto2 = image;
+                }
+                alert("foto1 " + Ti.App.novo.foto1);
                 close();
             },
             cancel: function() {
@@ -60,6 +70,15 @@ function Controller() {
             success: function(event) {
                 var image = event.media;
                 event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO && Ti.App.Properties.setString("image", image.nativePath);
+                switch (escolha) {
+                  case 1:
+                    Ti.App.novo.foto1 = image;
+                    break;
+
+                  case 2:
+                    Ti.App.novo.foto2 = image;
+                }
+                close();
             },
             cancel: function() {}
         });
