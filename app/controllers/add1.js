@@ -1,26 +1,25 @@
-var imagemFrente = '';
-var imagemVerso = '';
-var contato = Alloy.createModel("contato", {
+Ti.App.novo = Alloy.createModel("contato", {
 		nome : $.txfNome.value,
-		foto1 : imagemFrente,
-		foto2 : imagemVerso,
+		foto1 :'',
+		foto2 : '',
 		qtdFotos : 0,
 		favoritos : 0,
 		categorias : ''
 	});
 
+
 function clickFrente() {
 	var camera = Alloy.createController('camera');
 	camera.getView().open({
 		modal : true
-	});
+	}, 1);
 }
 
 function clickVerso() {
 	var camera = Alloy.createController('camera');
 	camera.getView().open({
 		modal : true
-	}, imagemVerso);
+	}, 2);
 
 }
 

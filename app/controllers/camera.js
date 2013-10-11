@@ -1,5 +1,6 @@
-
+var escolha  = arguments[0];
 //add event listener
+
 $.cameraButton.addEventListener('click', function(e) {
 	Titanium.Media.showCamera({
 		//we got something
@@ -13,8 +14,12 @@ $.cameraButton.addEventListener('click', function(e) {
 				//or simply save path to image
 				Ti.App.Properties.setString("image", image.nativePath);
 			}
-			
-			
+			switch(escolha){
+				case 1:Ti.App.novo.foto1 = image;break;
+				case 2:Ti.App.novo.foto2 = image;break;
+			}
+			alert("foto1 "+ Ti.App.novo.foto1);
+
 			close();
 		},
 		cancel : function() {
@@ -55,6 +60,12 @@ $.galeriaButton.addEventListener('click', function(e) {
 				//or simply save path to image
 				Ti.App.Properties.setString("image", image.nativePath);
 			}
+				switch(escolha){
+				case 1:Ti.App.novo.foto1 = image;break;
+				case 2:Ti.App.novo.foto2 = image;break;
+			}
+			close();
+			
 		},
 		cancel : function() {
 			//user cancelled the action fron within
