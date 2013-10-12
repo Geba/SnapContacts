@@ -10,7 +10,7 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.winCamera = Ti.UI.createWindow({
-        backgroundColor: "black",
+        backgroundColor: "#221E1D",
         id: "winCamera",
         titleid: "Camera",
         layout: "vertical"
@@ -19,7 +19,10 @@ function Controller() {
     $.__views.cameraButton = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
+        height: "38dp",
         color: "white",
+        backgroundColor: "#E9633B",
+        backgroundSelectedColor: "#FFB5A2",
         title: "Camera",
         id: "cameraButton"
     });
@@ -27,7 +30,10 @@ function Controller() {
     $.__views.galeriaButton = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
+        height: "38dp",
         color: "white",
+        backgroundColor: "#E9633B",
+        backgroundSelectedColor: "#FFB5A2",
         title: "Galeria",
         id: "galeriaButton"
     });

@@ -1,16 +1,14 @@
 "TabGroup":{
-	backgroundColor:'#191970',
+	backgroundColor:'#221E1D',
 	
 }
 "Window":{
-	backgroundColor:'black',
+	backgroundColor:'#221E1D',
 }
-
 "Tab":{
-	
-	backgroundColor: '#00688B',
-	backgroundSelectedColor: '#00BFFF',
-	backgroundFocusedColor: '#009ACD'
+	backgroundColor: '#221E1D',
+	backgroundSelectedColor: '#63AA9C',
+	backgroundFocusedColor: '#ECEAE0'
 }
 
 ".layoutVertical":{
@@ -24,7 +22,6 @@
 	layout:"horizontal",
 	width: Ti.UI.FILL,
 	height: "42dp",
-	
 	left:"4dp",
 	right:"4dp"
 }
@@ -42,11 +39,19 @@
 "Button":{
 	top:'10dp',
 	width:'200dp',
+	height: '38dp',
 	color: "white",
+	backgroundColor:'#E9633B',
+	backgroundSelectedColor:"#FFB5A2"
 }
 
 "TextField":{
 	width: Ti.UI.FILL,
 	height: Ti.UI.SIZE,
 	
+}
+
+"ScrowView":{
+	width: Ti.UI.SIZES,
+	height: Ti.UI.SIZE,
 }

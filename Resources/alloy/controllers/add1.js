@@ -124,46 +124,63 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.winImagens = Ti.UI.createWindow({
-        backgroundColor: "black",
+        backgroundColor: "#221E1D",
         id: "winImagens",
         titleid: "adicionarImagens",
         layout: "vertical"
     });
     $.__views.winImagens && $.addTopLevelView($.__views.winImagens);
+    $.__views.__alloyId0 = Ti.UI.createScrollView({
+        showVerticalScrollIndicator: "true",
+        layout: "vertical",
+        id: "__alloyId0"
+    });
+    $.__views.winImagens.add($.__views.__alloyId0);
     $.__views.frenteButton = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
+        height: "38dp",
         color: "white",
+        backgroundColor: "#E9633B",
+        backgroundSelectedColor: "#FFB5A2",
+        title: "",
         titleid: "frente",
         id: "frenteButton"
     });
-    $.__views.winImagens.add($.__views.frenteButton);
+    $.__views.__alloyId0.add($.__views.frenteButton);
     clickFrente ? $.__views.frenteButton.addEventListener("click", clickFrente) : __defers["$.__views.frenteButton!click!clickFrente"] = true;
     $.__views.ImgFrente = Ti.UI.createImageView({
         id: "ImgFrente"
     });
-    $.__views.winImagens.add($.__views.ImgFrente);
+    $.__views.__alloyId0.add($.__views.ImgFrente);
     $.__views.versoButton = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
+        height: "38dp",
         color: "white",
+        backgroundColor: "#E9633B",
+        backgroundSelectedColor: "#FFB5A2",
+        title: "",
         titleid: "verso",
         id: "versoButton"
     });
-    $.__views.winImagens.add($.__views.versoButton);
+    $.__views.__alloyId0.add($.__views.versoButton);
     clickVerso ? $.__views.versoButton.addEventListener("click", clickVerso) : __defers["$.__views.versoButton!click!clickVerso"] = true;
     $.__views.ImgVerso = Ti.UI.createImageView({
         id: "ImgVerso"
     });
-    $.__views.winImagens.add($.__views.ImgVerso);
+    $.__views.__alloyId0.add($.__views.ImgVerso);
     $.__views.salvarButton = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
+        height: "38dp",
         color: "white",
-        title: "Salvar",
+        backgroundColor: "#E9633B",
+        backgroundSelectedColor: "#FFB5A2",
+        title: "",
         id: "salvarButton"
     });
-    $.__views.winImagens.add($.__views.salvarButton);
+    $.__views.__alloyId0.add($.__views.salvarButton);
     clickSalvar ? $.__views.salvarButton.addEventListener("click", clickSalvar) : __defers["$.__views.salvarButton!click!clickSalvar"] = true;
     $.__views.txfNome = Ti.UI.createTextField({
         width: Ti.UI.FILL,
@@ -171,7 +188,7 @@ function Controller() {
         id: "txfNome",
         hintText: "Palavra Chave"
     });
-    $.__views.winImagens.add($.__views.txfNome);
+    $.__views.__alloyId0.add($.__views.txfNome);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var contato = Alloy.createModel("contato", {

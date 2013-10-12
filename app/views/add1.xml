@@ -1,10 +1,18 @@
 <Alloy>
 	<Window id="winImagens" titleid="adicionarImagens" layout="vertical">
-			<Button titleid="frente" id="frenteButton" onClick="clickFrente" ></Button>
-			<ImageView id="ImgFrente"></ImageView>
-			<Button titleid="verso" id="versoButton" onClick="clickVerso"></Button>
-			<ImageView id="ImgVerso">			</ImageView>
-			<Button title="Salvar" id="salvarButton" onClick="clickSalvar"></Button>
-			<TextField id="txfNome" hintText="Palavra Chave"></TextField>
-		</Window>
+		<ScrollView showVerticalScrollIndicator="true" layout="vertical">
+			<Button titleid="frente" id="frenteButton" onClick="clickFrente" >
+			</Button>
+			<ImageView id="ImgFrente">
+			</ImageView>
+			<Button titleid="verso" id="versoButton" onClick="clickVerso">
+			</Button>
+			<ImageView id="ImgVerso">
+			</ImageView>
+			<Button title="Salvar" id="salvarButton" onClick="clickSalvar">
+			</Button>
+			<TextField id="txfNome" hintText="Palavra Chave">
+			</TextField>
+		</ScrollView>
+	</Window>
 </Alloy>

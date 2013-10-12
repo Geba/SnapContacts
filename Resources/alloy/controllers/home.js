@@ -14,7 +14,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.homeWindow = Ti.UI.createWindow({
-        backgroundColor: "black",
+        backgroundColor: "#221E1D",
         id: "homeWindow",
         titleid: "home",
         layout: "vertical"
@@ -22,17 +22,20 @@ function Controller() {
     $.__views.Btadd = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
+        height: "38dp",
         color: "white",
+        backgroundColor: "#E9633B",
+        backgroundSelectedColor: "#FFB5A2",
         title: L("adicionar"),
         id: "Btadd"
     });
     $.__views.homeWindow.add($.__views.Btadd);
     openAdd1 ? $.__views.Btadd.addEventListener("click", openAdd1) : __defers["$.__views.Btadd!click!openAdd1"] = true;
-    $.__views.__alloyId0 = Ti.UI.createView({
+    $.__views.__alloyId1 = Ti.UI.createView({
         layout: "horizontal",
-        id: "__alloyId0"
+        id: "__alloyId1"
     });
-    $.__views.homeWindow.add($.__views.__alloyId0);
+    $.__views.homeWindow.add($.__views.__alloyId1);
     $.__views.Lprocurar = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -44,18 +47,18 @@ function Controller() {
         textid: "procurarText",
         id: "Lprocurar"
     });
-    $.__views.__alloyId0.add($.__views.Lprocurar);
+    $.__views.__alloyId1.add($.__views.Lprocurar);
     $.__views.TFprocurar = Ti.UI.createTextField({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         hintText: L("procurarDica"),
         id: "TFprocurar"
     });
-    $.__views.__alloyId0.add($.__views.TFprocurar);
+    $.__views.__alloyId1.add($.__views.TFprocurar);
     $.__views.homeTab = Ti.UI.createTab({
-        backgroundColor: "#00688B",
-        backgroundSelectedColor: "#00BFFF",
-        backgroundFocusedColor: "#009ACD",
+        backgroundColor: "#221E1D",
+        backgroundSelectedColor: "#63AA9C",
+        backgroundFocusedColor: "#ECEAE0",
         icon: "/images/ic_home.png",
         window: $.__views.homeWindow,
         id: "homeTab",

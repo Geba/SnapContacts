@@ -1,6 +1,3 @@
-".container": {
-	backgroundColor:"blue"
-},
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,

@@ -7,7 +7,7 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.win4 = Ti.UI.createWindow({
-        backgroundColor: "black",
+        backgroundColor: "#221E1D",
         id: "win4",
         title: "configuracoes"
     });
@@ -24,9 +24,9 @@ function Controller() {
     });
     $.__views.win4.add($.__views.label2);
     $.__views.configTab = Ti.UI.createTab({
-        backgroundColor: "#00688B",
-        backgroundSelectedColor: "#00BFFF",
-        backgroundFocusedColor: "#009ACD",
+        backgroundColor: "#221E1D",
+        backgroundSelectedColor: "#63AA9C",
+        backgroundFocusedColor: "#ECEAE0",
         icon: "/images/ic_fix.png",
         window: $.__views.win4,
         id: "configTab",

@@ -7,25 +7,25 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.index = Ti.UI.createTabGroup({
-        backgroundColor: "#191970",
+        backgroundColor: "#221E1D",
         id: "index"
     });
-    $.__views.__alloyId2 = Alloy.createController("home", {
-        id: "__alloyId2"
-    });
-    $.__views.index.addTab($.__views.__alloyId2.getViewEx({
-        recurse: true
-    }));
-    $.__views.__alloyId3 = Alloy.createController("favoritos", {
+    $.__views.__alloyId3 = Alloy.createController("home", {
         id: "__alloyId3"
     });
     $.__views.index.addTab($.__views.__alloyId3.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId4 = Alloy.createController("configuracoes", {
+    $.__views.__alloyId4 = Alloy.createController("favoritos", {
         id: "__alloyId4"
     });
     $.__views.index.addTab($.__views.__alloyId4.getViewEx({
+        recurse: true
+    }));
+    $.__views.__alloyId5 = Alloy.createController("configuracoes", {
+        id: "__alloyId5"
+    });
+    $.__views.index.addTab($.__views.__alloyId5.getViewEx({
         recurse: true
     }));
     $.__views.index && $.addTopLevelView($.__views.index);

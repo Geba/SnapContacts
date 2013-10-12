@@ -7,7 +7,7 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.win3 = Ti.UI.createWindow({
-        backgroundColor: "black",
+        backgroundColor: "#221E1D",
         id: "win3",
         titleid: "favoritos"
     });
@@ -24,9 +24,9 @@ function Controller() {
     });
     $.__views.win3.add($.__views.label2);
     $.__views.favoriteTab = Ti.UI.createTab({
-        backgroundColor: "#00688B",
-        backgroundSelectedColor: "#00BFFF",
-        backgroundFocusedColor: "#009ACD",
+        backgroundColor: "#221E1D",
+        backgroundSelectedColor: "#63AA9C",
+        backgroundFocusedColor: "#ECEAE0",
         icon: "/images/ic_favorite.png",
         window: $.__views.win3,
         id: "favoriteTab",

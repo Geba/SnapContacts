@@ -3,23 +3,23 @@ module.exports = [ {
     priority: 1000.0001,
     key: "TabGroup",
     style: {
-        backgroundColor: "#191970"
+        backgroundColor: "#221E1D"
     }
 }, {
     isApi: true,
     priority: 1000.0002,
     key: "Window",
     style: {
-        backgroundColor: "black"
+        backgroundColor: "#221E1D"
     }
 }, {
     isApi: true,
     priority: 1000.0003,
     key: "Tab",
     style: {
-        backgroundColor: "#00688B",
-        backgroundSelectedColor: "#00BFFF",
-        backgroundFocusedColor: "#009ACD"
+        backgroundColor: "#221E1D",
+        backgroundSelectedColor: "#63AA9C",
+        backgroundFocusedColor: "#ECEAE0"
     }
 }, {
     isApi: true,
@@ -41,7 +41,10 @@ module.exports = [ {
     style: {
         top: "10dp",
         width: "200dp",
-        color: "white"
+        height: "38dp",
+        color: "white",
+        backgroundColor: "#E9633B",
+        backgroundSelectedColor: "#FFB5A2"
     }
 }, {
     isApi: true,
@@ -49,6 +52,14 @@ module.exports = [ {
     key: "TextField",
     style: {
         width: Ti.UI.FILL,
+        height: Ti.UI.SIZE
+    }
+}, {
+    isApi: true,
+    priority: 1000.0009,
+    key: "ScrowView",
+    style: {
+        width: Ti.UI.SIZES,
         height: Ti.UI.SIZE
     }
 }, {
