@@ -1,3 +1,10 @@
+".searchBars":{
+hinttextid:"procurarText",
+height:"50dp"
+	
+}
+
+
 "TabGroup":{
 	backgroundColor:'#221E1D',
 	
@@ -10,6 +17,7 @@
 	backgroundSelectedColor: '#63AA9C',
 	backgroundFocusedColor: '#ECEAE0'
 }
+
 
 ".layoutVertical":{
 	layout:"vertical",
@@ -55,3 +63,5 @@
 	width: Ti.UI.SIZES,
 	height: Ti.UI.SIZE,
 }
+
+

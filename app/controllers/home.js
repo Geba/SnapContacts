@@ -3,6 +3,8 @@ Alloy.Collections.contato.fetch();
 var contatos = Alloy.Collections.contato;
 contatos.fetch();
 
+$.tableviewContatos.search = $.contatosSearch;
+
 function openAdd1() {
 	var add1 = Alloy.createController('add1');
 	add1.getView().open({

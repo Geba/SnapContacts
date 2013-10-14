@@ -1,18 +1,25 @@
 function Controller() {
-    function __alloyId6() {
-        __alloyId6.opts || {};
-        var models = __alloyId5.models;
+    function __alloyId14() {
+        __alloyId14.opts || {};
+        var models = __alloyId13.models;
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId1 = models[i];
-            __alloyId1.__transform = {};
-            var __alloyId2 = Ti.UI.createTableViewRow({
+            var __alloyId7 = models[i];
+            __alloyId7.__transform = {};
+            var __alloyId8 = Ti.UI.createTableViewRow({
                 dataId: "",
-                model: "undefined" != typeof __alloyId1.__transform["alloy_id"] ? __alloyId1.__transform["alloy_id"] : __alloyId1.get("alloy_id")
+                title: "undefined" != typeof __alloyId7.__transform["nome"] ? __alloyId7.__transform["nome"] : __alloyId7.get("nome"),
+                model: "undefined" != typeof __alloyId7.__transform["alloy_id"] ? __alloyId7.__transform["alloy_id"] : __alloyId7.get("alloy_id"),
+                editable: "true",
+                layout: "vertical"
             });
-            rows.push(__alloyId2);
-            var __alloyId4 = Ti.UI.createLabel({
+            rows.push(__alloyId8);
+            var __alloyId9 = Ti.UI.createView({
+                height: "230"
+            });
+            __alloyId8.add(__alloyId9);
+            var __alloyId10 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
                 right: "10dp",
@@ -20,11 +27,15 @@ function Controller() {
                 font: {
                     fontSize: "16dp"
                 },
-                text: "undefined" != typeof __alloyId1.__transform["nome"] ? __alloyId1.__transform["nome"] : __alloyId1.get("nome")
+                text: "undefined" != typeof __alloyId7.__transform["nome"] ? __alloyId7.__transform["nome"] : __alloyId7.get("nome")
             });
-            __alloyId2.add(__alloyId4);
+            __alloyId9.add(__alloyId10);
+            var __alloyId12 = Ti.UI.createImageView({
+                image: "undefined" != typeof __alloyId7.__transform["foto1"] ? __alloyId7.__transform["foto1"] : __alloyId7.get("foto1")
+            });
+            __alloyId8.add(__alloyId12);
         }
-        $.__views.tableview.setData(rows);
+        $.__views.tableviewContatos.setData(rows);
     }
     function openAdd1() {
         var add1 = Alloy.createController("add1");
@@ -46,6 +57,13 @@ function Controller() {
         titleid: "home",
         layout: "vertical"
     });
+    $.__views.contatosSearch = Ti.UI.createSearchBar({
+        hinttextid: "procurarText",
+        height: "50dp",
+        id: "contatosSearch",
+        showCancel: "false"
+    });
+    $.__views.homeWindow.add($.__views.contatosSearch);
     $.__views.Btadd = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
@@ -58,18 +76,18 @@ function Controller() {
     });
     $.__views.homeWindow.add($.__views.Btadd);
     openAdd1 ? $.__views.Btadd.addEventListener("click", openAdd1) : __defers["$.__views.Btadd!click!openAdd1"] = true;
-    $.__views.tableview = Ti.UI.createTableView({
-        id: "tableview",
+    $.__views.tableviewContatos = Ti.UI.createTableView({
+        id: "tableviewContatos",
         height: Ti.UI.SIZE
     });
-    $.__views.homeWindow.add($.__views.tableview);
-    var __alloyId5 = Alloy.Collections["contato"] || contato;
-    __alloyId5.on("fetch destroy change add remove reset", __alloyId6);
-    $.__views.__alloyId7 = Ti.UI.createView({
+    $.__views.homeWindow.add($.__views.tableviewContatos);
+    var __alloyId13 = Alloy.Collections["contato"] || contato;
+    __alloyId13.on("fetch destroy change add remove reset", __alloyId14);
+    $.__views.__alloyId15 = Ti.UI.createView({
         layout: "horizontal",
-        id: "__alloyId7"
+        id: "__alloyId15"
     });
-    $.__views.homeWindow.add($.__views.__alloyId7);
+    $.__views.homeWindow.add($.__views.__alloyId15);
     $.__views.Lprocurar = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -81,14 +99,14 @@ function Controller() {
         textid: "procurarText",
         id: "Lprocurar"
     });
-    $.__views.__alloyId7.add($.__views.Lprocurar);
+    $.__views.__alloyId15.add($.__views.Lprocurar);
     $.__views.TFprocurar = Ti.UI.createTextField({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         hintText: L("procurarDica"),
         id: "TFprocurar"
     });
-    $.__views.__alloyId7.add($.__views.TFprocurar);
+    $.__views.__alloyId15.add($.__views.TFprocurar);
     $.__views.homeTab = Ti.UI.createTab({
         backgroundColor: "#221E1D",
         backgroundSelectedColor: "#63AA9C",
@@ -100,12 +118,13 @@ function Controller() {
     });
     $.__views.homeTab && $.addTopLevelView($.__views.homeTab);
     exports.destroy = function() {
-        __alloyId5.off("fetch destroy change add remove reset", __alloyId6);
+        __alloyId13.off("fetch destroy change add remove reset", __alloyId14);
     };
     _.extend($, $.__views);
     Alloy.Collections.contato.fetch();
     var contatos = Alloy.Collections.contato;
     contatos.fetch();
+    $.tableviewContatos.search = $.contatosSearch;
     __defers["$.__views.Btadd!click!openAdd1"] && $.__views.Btadd.addEventListener("click", openAdd1);
     _.extend($, exports);
 }

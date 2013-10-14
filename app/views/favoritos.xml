@@ -1,7 +1,11 @@
 <Alloy>
 	<Tab id="favoriteTab" titleid="favoritos">
 		<Window id="win3" titleid="favoritos">
-			<Label id="label2" color="#999">I am Window 3</Label>
+			<TableView id="tableviewContatos" dataCollection="contato" dataFilter="favoritosFilter" height="Ti.UI.SIZE">
+				<TableViewRow id="row" dataId="" model="{alloy_id}">
+					<Label class="rowName" text="{nome}"/>
+				</TableViewRow>
+			</TableView>
 		</Window>
 	</Tab>
 </Alloy>

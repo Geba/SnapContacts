@@ -10,22 +10,22 @@ function Controller() {
         backgroundColor: "#221E1D",
         id: "index"
     });
-    $.__views.__alloyId9 = Alloy.createController("home", {
-        id: "__alloyId9"
+    $.__views.__alloyId17 = Alloy.createController("home", {
+        id: "__alloyId17"
     });
-    $.__views.index.addTab($.__views.__alloyId9.getViewEx({
+    $.__views.index.addTab($.__views.__alloyId17.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId10 = Alloy.createController("favoritos", {
-        id: "__alloyId10"
+    $.__views.__alloyId18 = Alloy.createController("favoritos", {
+        id: "__alloyId18"
     });
-    $.__views.index.addTab($.__views.__alloyId10.getViewEx({
+    $.__views.index.addTab($.__views.__alloyId18.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId11 = Alloy.createController("configuracoes", {
-        id: "__alloyId11"
+    $.__views.__alloyId19 = Alloy.createController("configuracoes", {
+        id: "__alloyId19"
     });
-    $.__views.index.addTab($.__views.__alloyId11.getViewEx({
+    $.__views.index.addTab($.__views.__alloyId19.getViewEx({
         recurse: true
     }));
     $.__views.index && $.addTopLevelView($.__views.index);

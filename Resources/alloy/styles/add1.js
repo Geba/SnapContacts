@@ -1,20 +1,20 @@
 module.exports = [ {
     isApi: true,
-    priority: 1000.0001,
+    priority: 1000.0002,
     key: "TabGroup",
     style: {
         backgroundColor: "#221E1D"
     }
 }, {
     isApi: true,
-    priority: 1000.0002,
+    priority: 1000.0003,
     key: "Window",
     style: {
         backgroundColor: "#221E1D"
     }
 }, {
     isApi: true,
-    priority: 1000.0003,
+    priority: 1000.0004,
     key: "Tab",
     style: {
         backgroundColor: "#221E1D",
@@ -23,7 +23,7 @@ module.exports = [ {
     }
 }, {
     isApi: true,
-    priority: 1000.0006,
+    priority: 1000.0007,
     key: "Label",
     style: {
         width: Ti.UI.SIZE,
@@ -36,7 +36,7 @@ module.exports = [ {
     }
 }, {
     isApi: true,
-    priority: 1000.0007,
+    priority: 1000.0008,
     key: "Button",
     style: {
         top: "10dp",
@@ -48,7 +48,7 @@ module.exports = [ {
     }
 }, {
     isApi: true,
-    priority: 1000.0008,
+    priority: 1000.0009,
     key: "TextField",
     style: {
         width: Ti.UI.FILL,
@@ -56,7 +56,7 @@ module.exports = [ {
     }
 }, {
     isApi: true,
-    priority: 1000.0009,
+    priority: 1000.001,
     key: "ScrowView",
     style: {
         width: Ti.UI.SIZES,
@@ -64,14 +64,22 @@ module.exports = [ {
     }
 }, {
     isApi: true,
-    priority: 1000.0012,
+    priority: 1000.0013,
     key: "Tab",
     style: {
         icon: "/images/ic_camera.png"
     }
 }, {
     isClass: true,
-    priority: 10000.0004,
+    priority: 10000.0001,
+    key: "searchBars",
+    style: {
+        hinttextid: "procurarText",
+        height: "50dp"
+    }
+}, {
+    isClass: true,
+    priority: 10000.0005,
     key: "layoutVertical",
     style: {
         layout: "vertical",
@@ -80,7 +88,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0005,
+    priority: 10000.0006,
     key: "layoutHorizontal",
     style: {
         top: "5dp",
