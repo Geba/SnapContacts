@@ -1,16 +1,12 @@
 exports.definition = {
     config: {
         columns: {
-            nome: "text",
-            foto1: "text",
-            foto2: "text",
-            qntFotos: "integer",
-            favorito: "integer",
-            categorias: "text"
+            name: "string",
+            description: "text"
         },
         adapter: {
             type: "sql",
-            collection_name: "contato"
+            collection_name: "thing"
         }
     },
     extendModel: function(Model) {
@@ -25,9 +21,9 @@ exports.definition = {
 
 var Alloy = require("alloy"), _ = require("alloy/underscore")._, model, collection;
 
-model = Alloy.M("contato", exports.definition, []);
+model = Alloy.M("thing", exports.definition, []);
 
-collection = Alloy.C("contato", exports.definition, model);
+collection = Alloy.C("thing", exports.definition, model);
 
 exports.Model = model;
 

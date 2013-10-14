@@ -2,6 +2,11 @@
 	<Tab id="homeTab" titleid="home" class="tab">
 		<Window id="homeWindow" titleid="home" layout="vertical">
 			<Button id="Btadd" onClick="openAdd1"></Button>
+			<TableView id="tableview" dataCollection="contato" height="Ti.UI.SIZE">
+				<TableViewRow id="row" dataId="" model="{alloy_id}">
+					<Label class="rowName" text="{nome}"/>
+				</TableViewRow>
+			</TableView>
 			<View layout="horizontal">
 				<Label id="Lprocurar"></Label>
 				<TextField id="TFprocurar"></TextField>

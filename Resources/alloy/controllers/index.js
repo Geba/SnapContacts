@@ -10,28 +10,29 @@ function Controller() {
         backgroundColor: "#221E1D",
         id: "index"
     });
-    $.__views.__alloyId3 = Alloy.createController("home", {
-        id: "__alloyId3"
+    $.__views.__alloyId9 = Alloy.createController("home", {
+        id: "__alloyId9"
     });
-    $.__views.index.addTab($.__views.__alloyId3.getViewEx({
+    $.__views.index.addTab($.__views.__alloyId9.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId4 = Alloy.createController("favoritos", {
-        id: "__alloyId4"
+    $.__views.__alloyId10 = Alloy.createController("favoritos", {
+        id: "__alloyId10"
     });
-    $.__views.index.addTab($.__views.__alloyId4.getViewEx({
+    $.__views.index.addTab($.__views.__alloyId10.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId5 = Alloy.createController("configuracoes", {
-        id: "__alloyId5"
+    $.__views.__alloyId11 = Alloy.createController("configuracoes", {
+        id: "__alloyId11"
     });
-    $.__views.index.addTab($.__views.__alloyId5.getViewEx({
+    $.__views.index.addTab($.__views.__alloyId11.getViewEx({
         recurse: true
     }));
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    Titanium.UI.createTabGroup();
+    var contatos = Alloy.Collections.contato;
+    contatos.fetch();
     $.index.open();
     _.extend($, exports);
 }

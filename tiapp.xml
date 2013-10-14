@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.gebaegabi.snapcontacts2</id>
     <name>Snap Contacts</name>
     <version>1.0</version>
@@ -45,8 +46,9 @@
         <target device="mobileweb">true</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.1.2.GA</sdk-version>
+    <sdk-version>3.1.3.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
-<property name="ti.deploytype">test</property></ti:app>
+    <property name="ti.deploytype">test</property>
+</ti:app>

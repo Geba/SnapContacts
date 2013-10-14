@@ -109,7 +109,10 @@ function Controller() {
         contato.set({
             nome: $.txfNome.value
         });
+        alert($.txfNome.value + "\n" + contato.get("foto1") + "\n" + contato.get("foto2") + "\n" + contato.get("favorito") + "\n");
+        contatos.add(contato);
         contato.save();
+        contatos.fetch();
         close();
     }
     function close() {
@@ -143,7 +146,6 @@ function Controller() {
         color: "white",
         backgroundColor: "#E9633B",
         backgroundSelectedColor: "#FFB5A2",
-        title: "",
         titleid: "frente",
         id: "frenteButton"
     });
@@ -160,7 +162,6 @@ function Controller() {
         color: "white",
         backgroundColor: "#E9633B",
         backgroundSelectedColor: "#FFB5A2",
-        title: "",
         titleid: "verso",
         id: "versoButton"
     });
@@ -177,7 +178,7 @@ function Controller() {
         color: "white",
         backgroundColor: "#E9633B",
         backgroundSelectedColor: "#FFB5A2",
-        title: "",
+        titleid: "salvar",
         id: "salvarButton"
     });
     $.__views.__alloyId0.add($.__views.salvarButton);
@@ -191,12 +192,13 @@ function Controller() {
     $.__views.__alloyId0.add($.__views.txfNome);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var contatos = Alloy.Collections.contato;
     var contato = Alloy.createModel("contato", {
         nome: $.txfNome.value,
         foto1: "",
         foto2: "",
         qtdFotos: 0,
-        favoritos: 0,
+        favorito: 0,
         categorias: ""
     });
     __defers["$.__views.frenteButton!click!clickFrente"] && $.__views.frenteButton.addEventListener("click", clickFrente);

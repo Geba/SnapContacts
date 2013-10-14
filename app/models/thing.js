@@ -1,16 +1,12 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "nome": "text",
-		    "foto1": "text",
-		    "foto2": "text",
-		    "qntFotos": "integer",
-		    "favorito": "integer",
-		    "categorias": "text"
+		    "name": "string",
+		    "description": "text"
 		},
 		adapter: {
 			type: "sql",
-			collection_name: "contato"
+			collection_name: "thing"
 		}
 	},
 	extendModel: function(Model) {

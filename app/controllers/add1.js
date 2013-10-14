@@ -1,9 +1,11 @@
+var contatos = Alloy.Collections.contato;
+
 var contato = Alloy.createModel("contato", {
 	nome : $.txfNome.value,
 	foto1 : '',
 	foto2 : '',
 	qtdFotos : 0,
-	favoritos : 0,
+	favorito : 0,
 	categorias : ''
 });
 
@@ -207,7 +209,16 @@ function clickSalvar() {
 	contato.set({
 		'nome' : $.txfNome.value
 	});
+
+	alert($.txfNome.value+"\n"+
+	contato.get('foto1')+"\n"+
+	contato.get('foto2')+"\n"+
+	contato.get('favorito')+"\n");
+	
+	contatos.add(contato);
 	contato.save();
+	contatos.fetch();
+	
 	close();
 
 }
