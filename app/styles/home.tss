@@ -12,5 +12,9 @@
 	title:L("adicionar"),
 }
 
-
+"#row":{
+	font:{
+		fontSize: "16dp"
+	}
+}
 

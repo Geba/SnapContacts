@@ -1,39 +1,63 @@
 function Controller() {
-    function __alloyId14() {
-        __alloyId14.opts || {};
-        var models = __alloyId13.models;
+    function __alloyId24() {
+        __alloyId24.opts || {};
+        var models = __alloyId23.models;
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId7 = models[i];
-            __alloyId7.__transform = {};
-            var __alloyId8 = Ti.UI.createTableViewRow({
-                dataId: "",
-                title: "undefined" != typeof __alloyId7.__transform["nome"] ? __alloyId7.__transform["nome"] : __alloyId7.get("nome"),
-                model: "undefined" != typeof __alloyId7.__transform["alloy_id"] ? __alloyId7.__transform["alloy_id"] : __alloyId7.get("alloy_id"),
-                editable: "true",
-                layout: "vertical"
-            });
-            rows.push(__alloyId8);
-            var __alloyId9 = Ti.UI.createView({
-                height: "230"
-            });
-            __alloyId8.add(__alloyId9);
-            var __alloyId10 = Ti.UI.createLabel({
-                width: Ti.UI.SIZE,
-                height: Ti.UI.SIZE,
-                right: "10dp",
-                color: "white",
+            var __alloyId9 = models[i];
+            __alloyId9.__transform = {};
+            var __alloyId10 = Ti.UI.createTableViewRow({
+                layout: "vertical",
                 font: {
                     fontSize: "16dp"
                 },
-                text: "undefined" != typeof __alloyId7.__transform["nome"] ? __alloyId7.__transform["nome"] : __alloyId7.get("nome")
+                height: "auto",
+                title: "undefined" != typeof __alloyId9.__transform["nome"] ? __alloyId9.__transform["nome"] : __alloyId9.get("nome"),
+                model: "undefined" != typeof __alloyId9.__transform["alloy_id"] ? __alloyId9.__transform["alloy_id"] : __alloyId9.get("alloy_id"),
+                editable: "true"
             });
-            __alloyId9.add(__alloyId10);
-            var __alloyId12 = Ti.UI.createImageView({
-                image: "undefined" != typeof __alloyId7.__transform["foto1"] ? __alloyId7.__transform["foto1"] : __alloyId7.get("foto1")
+            rows.push(__alloyId10);
+            var __alloyId12 = Ti.UI.createView({
+                layout: "vertical"
             });
-            __alloyId8.add(__alloyId12);
+            __alloyId10.add(__alloyId12);
+            var __alloyId14 = Ti.UI.createLabel({
+                width: Ti.UI.SIZE,
+                height: Ti.UI.SIZE,
+                right: "10dp",
+                color: "blue",
+                font: {
+                    fontSize: "16dp"
+                },
+                text: "undefined" != typeof __alloyId9.__transform["nome"] ? __alloyId9.__transform["nome"] : __alloyId9.get("nome")
+            });
+            __alloyId12.add(__alloyId14);
+            var __alloyId16 = Ti.UI.createView({
+                height: Ti.UI.SIZE,
+                width: Ti.UI.FILL
+            });
+            __alloyId12.add(__alloyId16);
+            var __alloyId18 = Ti.UI.createScrollView({
+                scrollType: "horizontal",
+                layout: "horizontal",
+                horizontalWrap: "false"
+            });
+            __alloyId16.add(__alloyId18);
+            var __alloyId20 = Ti.UI.createImageView({
+                top: "15dp",
+                image: "undefined" != typeof __alloyId9.__transform["foto1"] ? __alloyId9.__transform["foto1"] : __alloyId9.get("foto1"),
+                height: "180dp",
+                width: "320dp"
+            });
+            __alloyId18.add(__alloyId20);
+            var __alloyId22 = Ti.UI.createImageView({
+                top: "15dp",
+                image: "undefined" != typeof __alloyId9.__transform["foto2"] ? __alloyId9.__transform["foto2"] : __alloyId9.get("foto2"),
+                height: "180dp",
+                width: "320dp"
+            });
+            __alloyId18.add(__alloyId22);
         }
         $.__views.tableviewContatos.setData(rows);
     }
@@ -42,6 +66,11 @@ function Controller() {
         add1.getView().open({
             modal: true
         });
+    }
+    function maisDetalhes(e) {
+        var contato = Alloy.Collections.contato.get(e.rowData.model);
+        var ctrl = Alloy.createController("detalhesContato", contato);
+        $.homeTab.open(ctrl.getView());
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "home";
@@ -52,10 +81,10 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.homeWindow = Ti.UI.createWindow({
-        backgroundColor: "#221E1D",
+        backgroundColor: "white",
+        layout: "vertical",
         id: "homeWindow",
-        titleid: "home",
-        layout: "vertical"
+        titleid: "home"
     });
     $.__views.contatosSearch = Ti.UI.createSearchBar({
         hinttextid: "procurarText",
@@ -67,50 +96,26 @@ function Controller() {
     $.__views.Btadd = Ti.UI.createButton({
         top: "10dp",
         width: "200dp",
-        height: "38dp",
-        color: "white",
-        backgroundColor: "#E9633B",
-        backgroundSelectedColor: "#FFB5A2",
+        height: "auto",
+        borderRadius: "10dp",
+        font: {
+            fontSize: "17dp"
+        },
         title: L("adicionar"),
         id: "Btadd"
     });
     $.__views.homeWindow.add($.__views.Btadd);
     openAdd1 ? $.__views.Btadd.addEventListener("click", openAdd1) : __defers["$.__views.Btadd!click!openAdd1"] = true;
     $.__views.tableviewContatos = Ti.UI.createTableView({
-        id: "tableviewContatos",
-        height: Ti.UI.SIZE
+        id: "tableviewContatos"
     });
     $.__views.homeWindow.add($.__views.tableviewContatos);
-    var __alloyId13 = Alloy.Collections["contato"] || contato;
-    __alloyId13.on("fetch destroy change add remove reset", __alloyId14);
-    $.__views.__alloyId15 = Ti.UI.createView({
-        layout: "horizontal",
-        id: "__alloyId15"
-    });
-    $.__views.homeWindow.add($.__views.__alloyId15);
-    $.__views.Lprocurar = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        right: "10dp",
-        color: "white",
-        font: {
-            fontSize: "16dp"
-        },
-        textid: "procurarText",
-        id: "Lprocurar"
-    });
-    $.__views.__alloyId15.add($.__views.Lprocurar);
-    $.__views.TFprocurar = Ti.UI.createTextField({
-        width: Ti.UI.FILL,
-        height: Ti.UI.SIZE,
-        hintText: L("procurarDica"),
-        id: "TFprocurar"
-    });
-    $.__views.__alloyId15.add($.__views.TFprocurar);
+    var __alloyId23 = Alloy.Collections["contato"] || contato;
+    __alloyId23.on("fetch destroy change add remove reset", __alloyId24);
+    maisDetalhes ? $.__views.tableviewContatos.addEventListener("click", maisDetalhes) : __defers["$.__views.tableviewContatos!click!maisDetalhes"] = true;
     $.__views.homeTab = Ti.UI.createTab({
-        backgroundColor: "#221E1D",
-        backgroundSelectedColor: "#63AA9C",
-        backgroundFocusedColor: "#ECEAE0",
+        backgroundSelectedColor: "#C8C8C8 ",
+        backgroundFocusedColor: "#999",
         icon: "/images/ic_home.png",
         window: $.__views.homeWindow,
         id: "homeTab",
@@ -118,7 +123,7 @@ function Controller() {
     });
     $.__views.homeTab && $.addTopLevelView($.__views.homeTab);
     exports.destroy = function() {
-        __alloyId13.off("fetch destroy change add remove reset", __alloyId14);
+        __alloyId23.off("fetch destroy change add remove reset", __alloyId24);
     };
     _.extend($, $.__views);
     Alloy.Collections.contato.fetch();
@@ -126,6 +131,7 @@ function Controller() {
     contatos.fetch();
     $.tableviewContatos.search = $.contatosSearch;
     __defers["$.__views.Btadd!click!openAdd1"] && $.__views.Btadd.addEventListener("click", openAdd1);
+    __defers["$.__views.tableviewContatos!click!maisDetalhes"] && $.__views.tableviewContatos.addEventListener("click", maisDetalhes);
     _.extend($, exports);
 }
 

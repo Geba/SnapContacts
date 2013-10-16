@@ -1,67 +1,94 @@
+"Window":{
+backgroundColor:"white",
+layout: 'vertical'
+}
+
+"title":{
+textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+
+
+
 ".searchBars":{
 hinttextid:"procurarText",
 height:"50dp"
-	
-}
 
+}
 
 "TabGroup":{
-	backgroundColor:'#221E1D',
-	
+//	backgroundColor:"white"
 }
-"Window":{
-	backgroundColor:'#221E1D',
-}
+
 "Tab":{
-	backgroundColor: '#221E1D',
-	backgroundSelectedColor: '#63AA9C',
-	backgroundFocusedColor: '#ECEAE0'
+//backgroundColor:"white",
+backgroundSelectedColor:'#C8C8C8 ',
+backgroundFocusedColor:'#999'
 }
 
 
 ".layoutVertical":{
-	layout:"vertical",
-	width:Ti.UI.FILL,
-	height:Ti.UI.FILL,
+layout:"vertical",
+width:Ti.UI.FILL,
+height:Ti.UI.FILL,
 }
 
 ".layoutHorizontal":{
-	top:"5dp",
-	layout:"horizontal",
-	width: Ti.UI.FILL,
-	height: "42dp",
-	left:"4dp",
-	right:"4dp"
+top:"5dp",
+layout:"horizontal",
+width: Ti.UI.FILL,
+height: "42dp",
+left:"4dp",
+right:"4dp"
 }
 
 "Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	right:"10dp",
-	color: "white",
-	font:{
-		fontSize:"16dp",
-	}
+width: Ti.UI.SIZE,
+height: Ti.UI.SIZE,
+right:"10dp",
+color: "white",
+font:{
+fontSize:"16dp",
+}
 }
 
 "Button":{
-	top:'10dp',
-	width:'200dp',
-	height: '38dp',
-	color: "white",
-	backgroundColor:'#E9633B',
-	backgroundSelectedColor:"#FFB5A2"
+top:'10dp',
+width:'200dp',
+height: 'auto',
+borderRadius:'10dp',
+font:{
+fontSize:'17dp'
+}
 }
 
 "TextField":{
-	width: Ti.UI.FILL,
-	height: Ti.UI.SIZE,
-	
+width: Ti.UI.FILL,
+height: Ti.UI.SIZE,
+textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+borderRadius:'10dp',
+top:'10dp',
 }
 
-"ScrowView":{
-	width: Ti.UI.SIZES,
-	height: Ti.UI.SIZE,
+".scrollVertical":{
+width: Ti.UI.FILL,
+height: Ti.UI.FILL,
 }
 
+".scrollHorizontal":{
+height: Ti.UI.SIZE,
+width: Ti.UI.FILL
+}
 
+"TableView":{
+}
+"TableViewRow":{
+layout: "vertical",
+font:{
+fontSize:'18dp'
+},
+height:'auto'
+}
+
+"ImageView":{
+top:'15dp',
+}

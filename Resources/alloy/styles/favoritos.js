@@ -1,29 +1,34 @@
 module.exports = [ {
     isApi: true,
-    priority: 1000.0002,
-    key: "TabGroup",
+    priority: 1000.0001,
+    key: "Window",
     style: {
-        backgroundColor: "#221E1D"
+        backgroundColor: "white",
+        layout: "vertical"
     }
 }, {
     isApi: true,
-    priority: 1000.0003,
-    key: "Window",
+    priority: 1000.0002,
+    key: "title",
     style: {
-        backgroundColor: "#221E1D"
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
     }
 }, {
     isApi: true,
     priority: 1000.0004,
+    key: "TabGroup",
+    style: {}
+}, {
+    isApi: true,
+    priority: 1000.0005,
     key: "Tab",
     style: {
-        backgroundColor: "#221E1D",
-        backgroundSelectedColor: "#63AA9C",
-        backgroundFocusedColor: "#ECEAE0"
+        backgroundSelectedColor: "#C8C8C8 ",
+        backgroundFocusedColor: "#999"
     }
 }, {
     isApi: true,
-    priority: 1000.0007,
+    priority: 1000.0008,
     key: "Label",
     style: {
         width: Ti.UI.SIZE,
@@ -36,42 +41,61 @@ module.exports = [ {
     }
 }, {
     isApi: true,
-    priority: 1000.0008,
+    priority: 1000.0009,
     key: "Button",
     style: {
         top: "10dp",
         width: "200dp",
-        height: "38dp",
-        color: "white",
-        backgroundColor: "#E9633B",
-        backgroundSelectedColor: "#FFB5A2"
-    }
-}, {
-    isApi: true,
-    priority: 1000.0009,
-    key: "TextField",
-    style: {
-        width: Ti.UI.FILL,
-        height: Ti.UI.SIZE
+        height: "auto",
+        borderRadius: "10dp",
+        font: {
+            fontSize: "17dp"
+        }
     }
 }, {
     isApi: true,
     priority: 1000.001,
-    key: "ScrowView",
+    key: "TextField",
     style: {
-        width: Ti.UI.SIZES,
-        height: Ti.UI.SIZE
+        width: Ti.UI.FILL,
+        height: Ti.UI.SIZE,
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+        borderRadius: "10dp",
+        top: "10dp"
     }
 }, {
     isApi: true,
-    priority: 1000.0018,
+    priority: 1000.0013,
+    key: "TableView",
+    style: {}
+}, {
+    isApi: true,
+    priority: 1000.0014,
+    key: "TableViewRow",
+    style: {
+        layout: "vertical",
+        font: {
+            fontSize: "18dp"
+        },
+        height: "auto"
+    }
+}, {
+    isApi: true,
+    priority: 1000.0015,
+    key: "ImageView",
+    style: {
+        top: "15dp"
+    }
+}, {
+    isApi: true,
+    priority: 1000.0027,
     key: "Tab",
     style: {
         icon: "/images/ic_favorite.png"
     }
 }, {
     isClass: true,
-    priority: 10000.0001,
+    priority: 10000.0003,
     key: "searchBars",
     style: {
         hinttextid: "procurarText",
@@ -79,7 +103,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0005,
+    priority: 10000.0006,
     key: "layoutVertical",
     style: {
         layout: "vertical",
@@ -88,7 +112,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0006,
+    priority: 10000.0007,
     key: "layoutHorizontal",
     style: {
         top: "5dp",
@@ -100,7 +124,18 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0019,
-    key: "container",
-    style: {}
+    priority: 10000.0011,
+    key: "scrollVertical",
+    style: {
+        width: Ti.UI.FILL,
+        height: Ti.UI.FILL
+    }
+}, {
+    isClass: true,
+    priority: 10000.0012,
+    key: "scrollHorizontal",
+    style: {
+        height: Ti.UI.SIZE,
+        width: Ti.UI.FILL
+    }
 } ];

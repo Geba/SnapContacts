@@ -1,9 +1,8 @@
 <Alloy>
 	<Tab id="favoriteTab" titleid="favoritos">
 		<Window id="win3" titleid="favoritos">
-			<TableView id="tableviewContatos" dataCollection="contato" dataFilter="favoritosFilter" height="Ti.UI.SIZE">
-				<TableViewRow id="row" dataId="" model="{alloy_id}">
-					<Label class="rowName" text="{nome}"/>
+			<TableView onClick="maisDetalhes" id="tableviewContatos" dataCollection="contato" dataFilter="favoritosFilter">
+				<TableViewRow id="row" title="{nome}" model="{alloy_id}" editable="true">
 				</TableViewRow>
 			</TableView>
 		</Window>

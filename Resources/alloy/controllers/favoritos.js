@@ -1,35 +1,35 @@
 function Controller() {
-    function __alloyId6() {
-        __alloyId6.opts || {};
-        var models = favoritosFilter(__alloyId5);
+    function __alloyId8() {
+        __alloyId8.opts || {};
+        var models = favoritosFilter(__alloyId7);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId1 = models[i];
-            __alloyId1.__transform = {};
-            var __alloyId2 = Ti.UI.createTableViewRow({
-                dataId: "",
-                model: "undefined" != typeof __alloyId1.__transform["alloy_id"] ? __alloyId1.__transform["alloy_id"] : __alloyId1.get("alloy_id")
-            });
-            rows.push(__alloyId2);
-            var __alloyId4 = Ti.UI.createLabel({
-                width: Ti.UI.SIZE,
-                height: Ti.UI.SIZE,
-                right: "10dp",
-                color: "white",
+            var __alloyId5 = models[i];
+            __alloyId5.__transform = {};
+            var __alloyId6 = Ti.UI.createTableViewRow({
+                layout: "vertical",
                 font: {
-                    fontSize: "16dp"
+                    fontSize: "18dp"
                 },
-                text: "undefined" != typeof __alloyId1.__transform["nome"] ? __alloyId1.__transform["nome"] : __alloyId1.get("nome")
+                height: "auto",
+                title: "undefined" != typeof __alloyId5.__transform["nome"] ? __alloyId5.__transform["nome"] : __alloyId5.get("nome"),
+                model: "undefined" != typeof __alloyId5.__transform["alloy_id"] ? __alloyId5.__transform["alloy_id"] : __alloyId5.get("alloy_id"),
+                editable: "true"
             });
-            __alloyId2.add(__alloyId4);
+            rows.push(__alloyId6);
         }
         $.__views.tableviewContatos.setData(rows);
     }
     function favoritosFilter(collection) {
         return collection.where({
-            favorito: 0
+            favorito: 1
         });
+    }
+    function maisDetalhes(e) {
+        var contato = Alloy.Collections.contato.get(e.rowData.model);
+        var ctrl = Alloy.createController("detalhesContato", contato);
+        $.favoriteTab.open(ctrl.getView());
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "favoritos";
@@ -38,22 +38,23 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
+    var __defers = {};
     $.__views.win3 = Ti.UI.createWindow({
-        backgroundColor: "#221E1D",
+        backgroundColor: "white",
+        layout: "vertical",
         id: "win3",
         titleid: "favoritos"
     });
     $.__views.tableviewContatos = Ti.UI.createTableView({
-        id: "tableviewContatos",
-        height: Ti.UI.SIZE
+        id: "tableviewContatos"
     });
     $.__views.win3.add($.__views.tableviewContatos);
-    var __alloyId5 = Alloy.Collections["contato"] || contato;
-    __alloyId5.on("fetch destroy change add remove reset", __alloyId6);
+    var __alloyId7 = Alloy.Collections["contato"] || contato;
+    __alloyId7.on("fetch destroy change add remove reset", __alloyId8);
+    maisDetalhes ? $.__views.tableviewContatos.addEventListener("click", maisDetalhes) : __defers["$.__views.tableviewContatos!click!maisDetalhes"] = true;
     $.__views.favoriteTab = Ti.UI.createTab({
-        backgroundColor: "#221E1D",
-        backgroundSelectedColor: "#63AA9C",
-        backgroundFocusedColor: "#ECEAE0",
+        backgroundSelectedColor: "#C8C8C8 ",
+        backgroundFocusedColor: "#999",
         icon: "/images/ic_favorite.png",
         window: $.__views.win3,
         id: "favoriteTab",
@@ -61,9 +62,10 @@ function Controller() {
     });
     $.__views.favoriteTab && $.addTopLevelView($.__views.favoriteTab);
     exports.destroy = function() {
-        __alloyId5.off("fetch destroy change add remove reset", __alloyId6);
+        __alloyId7.off("fetch destroy change add remove reset", __alloyId8);
     };
     _.extend($, $.__views);
+    __defers["$.__views.tableviewContatos!click!maisDetalhes"] && $.__views.tableviewContatos.addEventListener("click", maisDetalhes);
     _.extend($, exports);
 }
 

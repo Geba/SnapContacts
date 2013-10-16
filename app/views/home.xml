@@ -3,18 +3,21 @@
 		<Window id="homeWindow" titleid="home" layout="vertical">
 			<SearchBar id="contatosSearch" class="searchBars" showCancel="false"></SearchBar>
 			<Button id="Btadd" onClick="openAdd1"></Button>
-			<TableView id="tableviewContatos" dataCollection="contato" height="Ti.UI.SIZE">
-				<TableViewRow id="row" dataId="" title="{nome}" model="{alloy_id}" editable="true" layout="vertical">
-					<View id="view" height="230">
-						<Label id="rowName" text="{nome}"/>
+			<TableView onClick="maisDetalhes" id="tableviewContatos" dataCollection="contato" >
+				<TableViewRow id="row" title="{nome}" model="{alloy_id}" editable="true">
+
+					<View layout="vertical">
+						<Label text="{nome}" color="blue"/>
+						<View  class="scrollHorizontal">
+							<ScrollView  scrollType="horizontal" layout="horizontal" horizontalWrap="false">
+								<ImageView image="{foto1}" height="180dp" width="320dp"></ImageView>
+								<ImageView image="{foto2}" height="180dp" width="320dp"></ImageView>
+							</ScrollView>
+						</View>
 					</View>
-					<ImageView image="{foto1}"></ImageView>
+
 				</TableViewRow>
 			</TableView>
-			<View layout="horizontal">
-				<Label id="Lprocurar"></Label>
-				<TextField id="TFprocurar"></TextField>
-			</View>
 		</Window>
 	</Tab>
 </Alloy>

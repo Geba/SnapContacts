@@ -2,6 +2,5 @@
 	<TabGroup>
 		<Require src="home"></Require>
 		<Require src="favoritos"></Require>
-		<Require src="configuracoes"></Require>
 	</TabGroup>
 </Alloy>

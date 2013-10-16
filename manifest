@@ -1,9 +1,9 @@
-#appname: Snap Contacts
-#appid: com.gebaegabi.snapcontacts2
-#type: mobile
-#guid: c8757214-7f4f-49e7-90af-a8120420c4f1
-#version: 1.0
-#publisher: not specified
-#url: not specified
-#image: appicon.png
-#desc: not specified
+#appname:Snap Contacts
+#appid:com.gebaegabi.snapcontacts2
+#type:mobile
+#guid:c8757214-7f4f-49e7-90af-a8120420c4f1
+#version:1.0
+#publisher:Geovane
+#url:http://
+#image:appicon.png
+#desc:not specified

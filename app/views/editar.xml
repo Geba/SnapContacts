@@ -1,0 +1,19 @@
+<Alloy>
+	<Window id="editarWin"  layout="vertical">
+		<RightNavButton platform="ios">
+			<Button id="closeButton" onClick="close"></Button>
+		</RightNavButton>
+		
+		<ScrollView class="scrollVertical" showVerticalScrollIndicator="true" layout="vertical">
+			
+			<Button titleid="frente" id="frenteButton" onClick="clickFrente" ></Button>
+			<ImageView id="ImgFrente"  height="180dp" width="320dp" backgroundColor="red"></ImageView>
+			
+			<Button titleid="verso" id="versoButton" onClick="clickVerso"></Button>
+			<ImageView id="ImgVerso"></ImageView>
+			
+			<Button titleid="salvar" id="salvarButton" onClick="clickSalvar"></Button>
+			<TextField id="txfNome" hintText="Palavra Chave"></TextField>
+		</ScrollView>
+	</Window>
+</Alloy>

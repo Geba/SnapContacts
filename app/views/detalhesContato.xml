@@ -1,0 +1,19 @@
+<Alloy>
+	<Window id="detalhesWindow" layout="vertical">
+		<RightNavButton platform="ios">
+			<Button id="closeButton" onClick="close"></Button>
+		</RightNavButton>
+		<ScrollView class="scrollVertical" showVerticalScrollIndicator="true" layout="vertical">
+			<ImageView id="foto1"></ImageView>
+			<ImageView id="foto2"></ImageView>
+			<Label id="contatoLabel"></Label>
+			<Button id="favButton" onClick="favoritarContato"></Button>
+			<Button id="editButton" onClick="editarContato"></Button>
+			<Button id="deleteButton" onClick="deletarContato"></Button>
+			<View layout="horizontal" id="viewCall" >
+				<Button id="callButton" onClick="ligarParaContato"></Button>
+				<TextField id="txfLigar"></TextField>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

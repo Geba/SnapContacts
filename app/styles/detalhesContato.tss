@@ -1,4 +1,22 @@
-
-".container" : {
-  
+"#favButton":{
+title:L('Favoritar')
 }
+"#editButton":{
+title:L("Editar"),
+}
+"#callButton":{
+title:L("Ligar"),
+width:'80dp',
+}
+"#deleteButton":{
+title:L("Deletar"),
+}
+
+"#txfLigar":{
+hintText:L("Digite o número"),
+keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+}
+
+"#viewCall":{
+	height: Ti.UI.SIZE
+	}

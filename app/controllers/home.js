@@ -12,14 +12,15 @@ function openAdd1() {
 	});
 }
 
-function showDetails() {
-	alert('Funcionou!!');
-}
-
 function contatosFilter(collection) {
 	return collection.where({
 		favorito : 0
 	});
 }
 
+function maisDetalhes(e){
+	var contato = Alloy.Collections.contato.get(e.rowData.model);
+	var ctrl = Alloy.createController('detalhesContato', contato);
+	$.homeTab.open(ctrl.getView());
+}
 
